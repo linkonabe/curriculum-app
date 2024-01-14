@@ -7,13 +7,15 @@ WORKDIR /usr/src/app
 COPY curriculum-front/package*.json ./
 
 # Install dependencies
+RUN npm cache clean --force
+
 RUN npm install
 
 # Copy the rest of the application files
 COPY curriculum-front ./
 
 # Run npm run build
-RUN npm run build
+RUN npm run build --verbose
 
 # Copy nodeServer.js from curriculum-front to dist
 COPY curriculum-front/nodeServer.js dist/nodeServer.js
