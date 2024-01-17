@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Checkout Code') {
       steps {
-        git(url: 'https://github.com/faraday-academy/curriculum-app', branch: 'jen')
+        git(url: 'https://github.com/linkonabe/curriculum-app', branch: 'dev')
       }
     }
 
