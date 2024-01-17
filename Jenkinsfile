@@ -10,6 +10,7 @@ pipeline {
     stage('Log') {
       steps {
         sh 'ls -la'
+        sh 'sudo chmod 660 /var/run/docker.sock'
       }
     }
 
