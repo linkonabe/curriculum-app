@@ -15,9 +15,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh '''sudo chmod 660 /var/run/docker.sock
-&& sudo systemctl restart docker
-&& docker build -f curriculum-front/Dockerfile -t fuze365/curriculum-front:latest .
+        sh '''docker build -f curriculum-front/Dockerfile -t fuze365/curriculum-front:latest .
 '''
       }
     }
